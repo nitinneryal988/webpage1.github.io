@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="bootstrap/jQuery.min.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="bootstrap/jQuery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<style>
+		* {
+			margin:0;
+			padding:0;
+		}
+
+		#nav-bar  {
+			position:sticky;
+			top:0;
+			z-index:10;
+		}
+	.navbar-brand  {
+		height:40px;
+		padding-left:30px;
+	}
+	.navbar-nav li{
+		padding:0px 10px;
+	}
+	.navbar-nav li a {
+		float:right;
+		text-align:left;
+	}
+	#nav-bar ul li a:hover  {
+		color:#007bff!important;
+	}
+	.navbar   {
+		background:#fff;
+	}
+	.navbar-toggler {
+		border:none!important;
+	}
+	.nav-link {
+		color:#555!important;
+		font-width:600px;
+		font-size:16px;
+	}
+	.slider {
+		width:100%;
+	}
+	.carousel-caption {
+		top:50%;
+		transform:translateY(-50%);
+		bottom:initial!important;
+	}
+	.carousel-caption h5 {
+		color:#fff;
+		font-size:42px;
+	}
+	                         /*About */
+	     .about {
+	     	padding-top:50px;
+	     	padding-bottom:50px;
+	     	color:#555;
+	     }  
+	     .about .btn  {
+	     	margin-top:20px;
+	     	margin-bottom:30px;
+	     } 
+	     .about-content {
+	     	padding-top:20px;
+	     } 
+	     .skills-bar p {
+	     	margin-bottom:6px;
+	     	font-weight:600;
+	     }
+	     .progress {
+	     	border-radius:16px !important;
+	     	margin-bottom:20px;
+	     }                
+		                  /*SERVICES */
+		#services {
+			background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(barraques.cat_wallpapers-3d_65167.png);
+			background-size:cover;
+			background-position:center;
+			color:#efefef !important;
+			background-attachment:fixed;
+			padding-top:50px;
+			padding-bottom:50px;
+		} 
+		#services h1 {
+			text-align:center;
+			color:#efefef;
+			padding-bottom:10px;
+		}
+		#services h1::after {
+			content:"";
+			background:#efefef;
+			display:block;
+			height:3px;
+			width:170px;
+			margin:20px auto 5px;
+		} 
+		.services {
+			margin-top:40px;
+		}  
+		.icon {
+			font-size:40px;
+			margin:20px auto;
+			padding:10px;
+			height:80px;
+			width:80px;
+			border:1px solid #fff;
+			border-radius:50%;
+		}             
+#services p {
+	font-size:14px;
+	margin-top:20px;
+	color:#ccc;
+
+}
+.services .col-md-3:hover  {
+	background:#007bff;
+	cursor:pointer;
+	color:#fff;
+	transition:0.7s;
+}
+                                   /*Team MEMBERS*/
+
+  #team  {
+  	padding-top:50px;
+  	padding-bottom:50px;
+  	color:#555;
+  } 
+  h1  {
+  	text-align:center;
+  	color:#555 !important;
+  	padding-bottom:10px;
+  } 
+  h1::after {
+			content:"";
+			background:#007bff;
+			display:block;
+			height:3px;
+			width:170px;
+			margin:20px auto 5px;
+		}
+		.profile-pic {
+			margin-top:25px;
+		}                                
+	.profile-pic .img-box {
+		opacity:1;
+		display:block;
+		position:relative;
+	}
+	.profile-pic .img-box  img{
+	    filter:grayscale(1);
+	    width:200px;
+	    height:200px;
+	}
+	.profile-pic .img-box  img:hover{
+	    filter:grayscale(0);
+	    cursor:pointer;
+	}
+	.profile-pic h2  {
+		font-size:22px;
+		font-weight:bold;
+		margin-top:15px;
+		color:#007bff !important;
+	}
+	.profile-pic h3  {
+		font-size:15px;
+		font-weight:bold;
+		margin-top:15px;
+		
+	}
+	#team .fa   {
+		height:25px;
+		width:25px;
+		color:#007bff !important;
+		background:#fff;
+		border-radius:50%;
+		padding:4px;
+	}
+	.img-box ul {
+		padding:15px 0;
+		position:absolute;
+		z-index:2;
+		bottom:0;
+		left:50%;
+		transform:translateX(-50%);
+		opacity:0;
+		
+	}
+	.img-box ul  li {
+		padding:5px;
+		display:inline-block;
+	}
+	.img-box:hover ul  {
+		opacity:1;
+	}
+	.img-box ul , .img-box ul li {
+		transition:0.5s;
+	}
+	#promo  {
+		background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(1533826.jpg);
+		background-size:center;
+		background-position:center;
+		background-attachment:fixed;
+		color:white;
+		text-align:center;
+		padding:100px;
+		font-size:38px;
+		font-family:sans-serif;
+	}
+                                  /*price plan*/
+         #price  {
+         	padding:40px 0;
+         	background:#efefef;
+         } 
+         .single-price {
+         	margin:10px auto;
+         	display:inline;
+         	float:left;
+         	background-color:#fff;
+         	transition:0.5s;
+         }                        
+         .single-price:hover  {
+                box-shadow:0 2px 20px #333;
+         }
+         .price-head {
+         	background-color:#2196f3;
+         	display: inline;
+         	float:left;
+         	padding:10px 5px;
+         	text-align:center;
+         	width:100%;
+         }
+         .price-head h2  {
+               color:#fff;
+               font-size:30px;
+               font-weight:bold;
+               margin-bottom:5px;
+               padding:5px;
+               text-transform:uppercase;
+           }
+            .price-head p  {
+               color:#ccc;
+               font-height:30px;
+               font-weight:bold;     
+           }
+        #price span  {
+        	font-size:15px;
+        }
+        .price-content {
+        	display:inline;
+        	float:left;
+        	width:100%;
+        	padding:0 15px;
+        }
+        .price-content ul li {
+        	border-bottom:1px solid #efefef;
+        	padding:15px 10px;
+        	list-style:none; 
+        }
+        .fa-check-circle {
+        	margin-right:10px;
+        	font-size:20px;
+        	color:green;
+        }
+         .fa-times-circle {
+        	margin-right:10px;
+        	font-size:20px;
+        	color:red;
+        }
+        .price-button {
+            display:inline;
+            float:left;
+            padding:15px 15px 30px;
+            text-align:center;
+            width:100%;
+        }
+        .buy-btn {
+        	background:#2196f3;
+        	border-radius:3px;
+        	display:inline-block;
+        	font-size:18px;
+        	padding:15px 50px;
+        	transition:0.5s;
+        }
+        .buy-btn  {
+        	border:1px solid #fff;
+        	background:#3f51b5;
+        }
+        a {
+        	text-decoration:none !important;
+        	color:#fff!important;
+        }
+        #testimonials {
+        	padding-top:50px;
+        	padding-bottom:50px;
+        }
+        #testimonials .row  {
+        	margin-top:30px;
+        }  
+        .col-md-4  {
+        	margin:40px auto;
+        } 
+        .profile  {
+        	padding:70px 10px 10px;
+        	background:#efefef;
+        } 
+        .profile img  {
+        	top:-60px;
+        	position:absolute;
+        	left:calc(50% - 60px);
+        	border:10px solid #fff;
+        } 
+        .profile h3 {
+        	font-size:20px;
+        	margin-top:15px;
+        	color:#007bff;
+        }
+        .profile span {
+        	font-size:12px;
+        	color:#333;
+        }
+        blockquote {
+        	font-size:16px;
+        	line-height:30px;
+        }
+
+        blockquote::before  {
+        	content:"\93";
+        	font-size:50px;
+        	color:#007bff;
+        	position:relative;
+        	line-height:20px;
+        	bottom:-15px;
+        	right:5px;
+        }
+         blockquote::after  {
+        	content:"\94";
+        	font-size:50px;
+        	color:#007bff;
+        	position:relative;
+        	line-height:10px;
+        	bottom:-15px;
+        	right:5px;
+        }
+        .user {
+        	width:120px;
+        	height:120px;
+        	border-radius:50%;
+        } 
+        .profile:hover {
+        	box-shadow:0 0 15px 5px rgba(0,0,0,0.2);
+        } 
+                      /*get in touch*/
+        #contact  {
+        	background:#efefef;
+        	padding-top:40px;
+        	padding-bottom:40px;
+        	color:#777;
+        }  
+        .contact-form  {
+        	padding:15px;
+        } 
+        .form-control  {
+        	border-radius:0 !important;
+        	border:none;
+        } 
+        ::placeholder {
+        	color:#999 !important;         
+      }
+      .follow {
+      	background:#fff;
+      	padding:10px;
+      	margin:15px;
+      }
+      .contact-info .fa {
+      	margin:10px;
+      	color:#007bff;
+      	font-weight:bold;
+      }
+                  /*footer*/
+                  .footer  {
+                  	background:333;
+                  	color:#fff;
+                  	padding:12px;
+                  }
+                  .fa-heart-o  {
+                  margin:3px;
+                  color:red;
+                  }
+
+	</style>
+	<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="#">Nitin Neryal</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"  aria-label="Toggle-navigation"> <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#top">Home <span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#team">Features
+						</a>
+					</li>
+					<li class="nav-item ">
+						<a class="nav-link" href="#services">Project 
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About Me 						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#price">Hip-Hop 
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#testimonials">Portfoli 
+						</a>
+					</li>
+				</ul>
+			</div>
+             </nav>
+	</section>
+	                                <!-- slider  -->
+	         <div class="slider">
+	         	<div id="headerSlider" class="carousel slide" data-ride="carousel">
+	         		<ol class="carousel-indicators">
+	         			<li data-target="#headerSlider" data-slide-to="0" class="active">
+	         			</li>
+	         			<li data-target="#headerSlider" data-slide-to="1">
+	         			</li>
+	         			<li data-target="#headerSlider" data-slide-to="2">
+	         			</li>
+	         		</ol>
+	         		<div class="carousel-inner">
+	         			<div class="carousel-item active">
+	         				<img class="d-block img-fluid w-100" src="26220335_931711113666558_5407562360864316283_o.jpg"
+	         				alt="first slide">
+	         				<div class="carousel-caption"> <h5> LETS WORK TOGETHER </h5>  </div>
+	         			</div>
+	         			<div class="carousel-item">
+	         				<img class="d-block img-fluid w-100" src="21753154_873441779493492_2928116750384846263_o.jpg"
+	         				alt="second slide">
+	         				<div class="carousel-caption"> <h5> SELF TOUGHT  </h5>  </div>
+	         			</div>
+	         			<div class="carousel-item">
+	         				<img class="d-block img-fluid w-100" src="hii.jpg"
+	         				alt="third slide">
+	         				<div class="carousel-caption"> <h5> I GRIN AND I HUSTLE   </h5>  </div>
+	         			</div>
+	         		</div>
+	         		<a class="carousel-control-prev" href="#headerSlider"
+	         		role="button" data-slide="prev" >
+	         			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	         			<span class="sr-only">prview</span>
+	         		</a>
+	         		<a class="carousel-control-next" href="#headerSlider"
+	         		role="button" data-slide="next" >
+	         			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+	         			<span class="sr-only">next</span>
+	         		</a>		
+	         			</div></div>
+                                   <!-- About------->
+                <section id="about">
+                	<div class="container">
+                	 <div class="row">
+                	 <div class="col-md-6">
+                	 	<h2> About Me</h2>
+                	 	<div class="about-content">
+                	 		<p>  My name is Nitin Neryal and i am  basically from (Himachal Pradesh) and , I am a self taught front end 
+								webdeveloper . I love learning new languages and developing new stuff. I am creative with my skill and 
+								having the ability to  think of new ideas and about their implimentation  . I am a Developer with hunger
+								to learn and i love learning new stuff .   </p>
+                	 	</div>
+                	 	<button type="button" class="btn btn-primary">Read more>></button>
+                	 </div>
+                	 	<div class="col-md-6 skills-bar">
+                	 	<p>Hardworking</p>
+                	 	<div class="progress">
+                	 		<div class="progress-bar" style="width:80%;">80</div>
+                	 	</div>
+                	 	<p>Design</p>
+                	 	<div class="progress">
+                	 		<div class="progress-bar" style="width:85%;">85</div>
+                	 	</div>
+                	 	<p>creative</p>
+                	 	<div class="progress">
+                	 		<div class="progress-bar" style="width:30%;">30</div>
+                	 	</div>
+                	 	<p>Graphic Design</p>
+                	 	<div class="progress">
+                	 		<div class="progress-bar" style="width:60%;">60</div>
+                	 	</div>
+                	 	<p>Fl Design</p>
+                	 	<div class="progress">
+                	 		<div class="progress-bar" style="width:30%;">30
+                	 		</div>
+                	 	</div>
+                	 </div>		
+                   </div>
+               </div>
+                </section> 
+                                           <!-- SERVICES   
+                                                                  -->l;f            
+                          <section id="services">
+                          	<div class="container">
+                          		<h1>Our Services</h1>
+                          		<div class="row services">
+                          			<div class="col-md-3 text-center">
+                          				<div class="icon">
+                          					<i class="fa fa-desktop"></i>
+                          				</div>
+                          				<h3>Web Developement</h3>
+                          				<p>Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Blanditiis vero exercitationem perferendis aspernatur odit cumque voluptatum. Quas enim magni eum!</p>
+                          			</div>
+                          			<div class="col-md-3 text-center">
+                          				<div class="icon">
+                          					<i class="fa fa-tablet"></i>
+                          				</div>
+                          				<h3>App Developement</h3>
+                          				<p>Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Blanditiis vero exercitationem perferendis aspernatur odit cumque voluptatum. Quas enim magni eum!</p>
+                          			</div>
+                          			<div class="col-md-3 text-center">
+                          				<div class="icon">
+                          					<i class="fa fa-line-chart"></i>
+                          				</div>
+                          				<h3>Digital Marketing</h3>
+                          				<p>Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Blanditiis vero exercitationem perferendis aspernatur odit cumque voluptatum. Quas enim magni eum!</p>
+                          			</div>
+                          			<div class="col-md-3 text-center">
+                          				<div class="icon">
+                          					<i class="fa fa-paint-brush"></i>
+                          				</div>
+                          				<h3>Graphic Designing</h3>
+                          				<p>Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Blanditiis vero exercitationem perferendis aspernatur odit cumque voluptatum. Quas enim magni eum!</p>
+                          			</div>	
+                          </div>
+                          	</div>
+                          </section>
+
+
+                             <!-- Team Members  -->
+              <section id="team">
+              	<div class="container">
+              		<h1>Our Team</h1>
+              		<div class="row">
+              			<div class="col-md-3 profile-pic text-center ">
+              				<div class="img-box">
+              					<img src="34637626_1732387800177663_7645627036303622144_o.jpg" alt="" class="img-responsive">
+              				<ul>
+              				<a href=""><li></li><i class="fa fa-facebook"></i></a>
+              				<a href=""><li></li><i class="fa fa-twitter"></i></a>
+              				<a href=""><li></li><i  class="fa fa-linkedin"></i></a>
+              				</ul></div>
+              				<h2>Nitin Neryal</h2>
+              				<h3>Founder / C.E.O </h3>
+              				<p> Contact us for any kind of query and any suggestion u woul like to shair with us .</p>
+                </div>
+                             <div class="col-md-3 profile-pic text-center ">
+              				<div class="img-box">
+              					<img src="khedi.jpg" alt="" class="img-responsive">
+              				<ul>
+              				<a href=""><li></li><i class="fa fa-facebook"></i></a>
+              				<a href=""><li></li><i class="fa fa-twitter"></i></a>
+              				<a href=""><li></li><i  class="fa fa-linkedin"></i></a>
+              				</ul></div>
+              				<h2>Nitin Neryal</h2>
+              				<h3>Founder / C.E.O </h3>
+              				<p> Contact us for any kind of query and any suggestion u woul like to shair with us .</p>
+                </div>
+                            <div class="col-md-3 profile-pic text-center ">
+              				<div class="img-box">
+              					<img src="PicsArt_07-28-03.33.27.jpg" alt="" class="img-responsive">
+              				<ul>
+              				<a href=""><li></li><i class="fa fa-facebook"></i></a>
+              				<a href=""><li></li><i class="fa fa-twitter"></i></a>
+              				<a href=""><li></li><i  class="fa fa-linkedin"></i></a>
+              				</ul></div>
+              				<h2>Nitin Neryal</h2>
+              				<h3>Founder / C.E.O </h3>
+              				<p> Contact us for any kind of query and any suggestion u woul like to shair with us .</p>
+                </div>
+                               <div class="col-md-3 profile-pic text-center ">
+              				<div class="img-box">
+              					<img src="26907312_939768802860789_4400250242289423587_n.jpg" alt="" class="img-responsive">
+              				<ul>
+              				<a href=""><li></li><i class="fa fa-facebook"></i></a>
+              				<a href=""><li></li><i class="fa fa-twitter"></i></a>
+              				<a href=""><li></li><i  class="fa fa-linkedin"></i></a>
+              				</ul></div>
+              				<h2>Nitin Neryal</h2>
+              				<h3>Founder / C.E.O </h3>
+              				<p> Contact us for any kind of query and any suggestion u woul like to shair with us .</p>
+                </div>
+
+              	</div>
+              </section>    
+                                     <!-- promo 
+                                                   -->
+               <section id="promo">
+               	<div class="container">
+               	 <p> get your self registered</p>
+               	 <a href="" class="btn btn-primary">Contact Us</a>
+
+
+               	</div></section>  
+               	                   <!-- price plans >-->
+         <section id="price">
+         	<div class="container">
+                    <h1>Price Plan</h1>
+                    <div class="row">
+                          <div class='col-md-3'>
+                    	<div class="single-price">
+                    		<div class="price-head">
+                    		 <h2>Free</h2>
+                    		 <p>0$<span>month</span></p>
+                    		</div>
+                           <div class="price-content">
+                           	<ul>
+                           		<li><i class="fa fa-check-circle"></i>5GB Space</li>
+                           		<li><i class="fa fa-check-circle"></i>10GB Bandwidth</li>
+                           		<li><i class="fa fa-times-circle"></i>15 Email Account</li>
+                           		<li><i class="fa fa-times-circle"></i>unlimited Domain</li>
+                           		<li><i class="fa fa-times-circle"></i>unlimited Support</li>
+                           	</ul>
+                           </div>
+                            <div class="price-button">
+                            	<a href="" class="buy-btn">Join Free</a>
+                            </div>
+                    	</div>
+                    </div>
+                    <div class='col-md-3'>
+                    	<div class="single-price">
+                    		<div class="price-head">
+                    		 <h2>Buy Now</h2>
+                    		 <p>50$<span>month</span></p>
+                    		</div>
+                           <div class="price-content">
+                           	<ul>
+                           		<li><i class="fa fa-check-circle"></i>10GB Space</li>
+                            	<li><i class="fa fa-check-circle"></i>100GB Bandwidth</li>
+                           		<li><i class="fa fa-check-circle"></i>15 Email Account</li>
+                           		<li><i class="fa fa-times-circle"></i>unlimited Domain</li>
+                           		<li><i class="fa fa-times-circle"></i>unlimited Support</li>
+                           	</ul>
+                           </div>
+                            <div class="price-button">
+                            	<a href="" class="buy-btn">Buy Now</a>
+                            </div>
+                    	</div>
+                    </div>
+                            <div class='col-md-3'>
+                    	<div class="single-price">
+                    		<div class="price-head">
+                    		 <h2>Buisness</h2>
+                    		 <p>100$<span>month</span></p>
+                    		</div>
+                           <div class="price-content">
+                           	<ul>
+                           		<li><i class="fa fa-check-circle"></i>20GB Space</li>
+                           		<li><i class="fa fa-check-circle"></i>200GB Bandwidth</li>
+                           		<li><i class="fa fa-check-circle"></i>50 Email Account</li>
+                           		<li><i class="fa fa-check-circle"></i>unlimited Domain</li>
+                           		<li><i class="fa fa-times-circle"></i>unlimited Support</li>
+                           	</ul>
+                           </div>
+                            <div class="price-button">
+                            	<a href="" class="buy-btn">Buy Now</a>
+                            </div>
+                    	</div>
+                    </div>
+
+                    	   <div class='col-md-3'>
+                    	<div class="single-price">
+                    		<div class="price-head">
+                    		 <h2>Advanced</h2>
+                    		 <p>150$<span>month</span></p>
+                    		</div>
+                           <div class="price-content">
+                           	<ul>
+                           		<li><i class="fa fa-check-circle"></i>50GB Space</li>
+                           		<li><i class="fa fa-check-circle"></i>200GB Bandwidth</li>
+                           		<li><i class="fa fa-check-circle"></i>unlimited Email</li>
+                           		<li><i class="fa fa-check-circle"></i>unlimited Domain</li>
+                           		<li><i class="fa fa-check-circle"></i>unlimited Support</li>
+                           	</ul>
+                           </div>
+                            <div class="price-button">
+                            	<a href="" class="buy-btn">Buy Now</a>
+                            </div>
+                    	</div>
+                    </div>
+                </div>
+            </div>	
+         </section>
+                                        <!-- testimonial  -->
+               <section id="testimonials">
+               	<div class="container">
+               		<h1>Testimonials</h1>
+               		<p class="text-center">keep developing you own stuff and have fun </p>
+               		<div class="row">
+               			<div class="col-md-4 text-center">
+               				<div class="profile">
+               					<img src="14642105_665450783625927_952583403223495519_n.jpg" alt="" class="user">
+               					<blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo unde mollitia, nostrum itaque beatae reiciendis consectetur, voluptas rerum, earum incidunt, enim amet aut!    </blockquote>
+               					<h3>Golu Neryal <span>Co-founder at ZYX</span></h3>
+               				</div>
+               				
+               			</div>
+               			<div class="col-md-4 text-center">
+               				<div class="profile">
+               					<img src="12308441_532345023603171_2498361644938852645_n.jpg" alt="" class="user">
+               					<blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo unde mollitia, nostrum itaque beatae reiciendis consectetur, voluptas rerum, earum incidunt, enim amet aut!    </blockquote>
+               					<h3>Golu Neryal <span>Co-founder at ZYX</span></h3>
+               				</div>
+               				
+               			</div>
+               			<div class="col-md-4 text-center">
+               				<div class="profile">
+               					<img src="26685446_1578606072222504_8143546557120629230_o.jpg" alt="" class="user">
+               					<blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo unde mollitia, nostrum itaque beatae reiciendis consectetur, voluptas rerum, earum incidunt, enim amet aut!    </blockquote>
+               					<h3>Golu Neryal <span>Co-founder at ZYX</span></h3>
+               				</div>
+               			</div>
+               			</div>
+               	</div>
+               </section> 
+               		               <!-- GET IN TOUCH  -->
+               	<section id="contact">
+               		<div class="container">
+               			<h1>Get in Touch</h1>
+               			<div class="row">
+               				<div class="col-md-6">
+               					<form  class="contact-form"   action="">
+               						<div class="form-group">
+               							<input type="text" class="form-control" placeholder='yourname'>
+               						</div>
+               						<div class="form-group">
+               							<input type="phone-no" class="form-control" placeholder='phone no'>
+               						</div>
+               						<div class="form-group">
+               							<input type="email" class="form-control" placeholder='email id'>
+               						</div>
+               						<div class="form-group">
+               							<textarea class="form-control"  rows='4' placeholder='yourname'></textarea>
+               						</div>
+               						<button type='submit' class="btn btn-primary">send msg</button>
+               					</form> </div> 
+
+               				<div class="col-md-6 contact-info">
+               					<div class="follow"><b>Adress:</b>Nabha ,Shimla <i class="fa fa-map-marker"></i>India </div>
+
+
+               						
+               					<div class="follow"><b>Phone no:</b>Nabha ,Shimla India <i class="fa fa-phone"></i>+91 9816475539</div>   
+
+               						
+               					<div class="follow"><b>Email:</b>Nabha ,Shimla India<i class="fa fa-envelop-o"></i>nitinnneryal4@gmail.com </div>
+
+               			<div class="follow"><b><label>GetSocial:</label>  </b>
+               				<a href=""><i class="fa fa-facebook"></i></a>
+               			    <a href=""><i class="fa fa-youtube-play"></i></a>
+               				<a href=""><i class="fa fa-twitter"></i></a>
+               			    <a href=""><i class="fa fa-google-plus"></i></a>
+               			</div>
+               				       
+               		</div>
+               	</div>
+               	</div>
+                </section>      
+                <section id="footer ">
+                	<div class="container  text-center">
+               <p> Lorem ipsum, &copy; dolor. &reg;	<i class="fa fa-heart-o"></i> lorum hence by Nitin Neryal </p></div>
+           </section>
+                	
+
+
+                </section>                  
+	    
+</body>
+</html>
